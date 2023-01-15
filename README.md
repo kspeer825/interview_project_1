@@ -1,5 +1,8 @@
 # KYLE_Challenge
-Kyle Speer [LinkedIn](https://www.linkedin.com/in/kyle-d-speer/)
+Kyle Speer
+
+[LinkedIn](https://www.linkedin.com/in/kyle-d-speer/)
+
 January 2023
 
 ## Infrastructure
