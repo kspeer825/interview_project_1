@@ -1,23 +1,16 @@
 # KYLE_Challenge
+
 Author:
-
 Kyle Speer
-
 January 2023
 
-
 Contact Info:
-
 610-996-7373
-
 kyle.d.speer@gmail.com
-
 [LinkedIn](https://www.linkedin.com/in/kyle-d-speer/)
 
-
-
 ## Infrastructure
-![Deploy](https://github.com/kspeer825/KYLE_Challenge/blob/main/.github/workflows/deploy_infra.yml/badge.svg)
+![Deploy](https://github.com/kspeer825/KYLE_Challenge/actions/workflows/deploy_infra.yml/badge.svg)
 
 ### DEMO
 The infrastructure can be deployed via GH Actions [here](https://github.com/kspeer825/KYLE_Challenge/actions/workflows/deploy_infra.yml).
@@ -56,7 +49,7 @@ $ cd infra && terraform init
 $ terraform apply -auto-apply -var="aws_region=us-east-2" -var="aws_access_key=${AWS_ACCESS_KEY_ID}" -var="aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}"
 ```
 
-The static webpage is now available at `<CLOUDFRONT_DOMAIN>.cloudfront.net`.
+The static webpage is now available at `<DISTIBUTION_ID>.cloudfront.net`.
 
 ![Alt text](/infra/demo/200_success.png?raw=true "200 Success")
 
@@ -75,7 +68,7 @@ To generate a self-signed Certificat w/ SSL run included script:
 
 ```
 $ cd infra/openssl
-$ bin/setup.sh d31xfsxbx5d9z3.cloudfront.net
+$ bin/setup.sh <CLOUDFRONT_DOMAIN>
 ```
 
 Then the certificate `server.pem` and key `serverKey.pem` can be imported to ACM.
