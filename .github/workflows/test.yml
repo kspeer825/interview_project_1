@@ -25,4 +25,4 @@ jobs:
       - name: test secrets
         env:
           KEY: ${{ secrets.TEST_SECRET }}
-        run: echo "${env.KEY}"
+        run: echo "${{ env.KEY }}"
