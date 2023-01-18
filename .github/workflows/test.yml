@@ -1,0 +1,28 @@
+name: 'Spin Up Infra'
+
+on:
+  workflow_dipatch:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    name: 'Deploy Infra'
+    runs-on: ubuntu-latest
+    environment: production
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.3.7
+
+      - name: test secrets
+        env:
+          KEY: ${{ secrets.TEST_SECRET }}
+        run: echo "${env.KEY}"
