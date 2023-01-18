@@ -44,9 +44,9 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        if: ${{ inputs.plan == 'true' }}
+        if: ${{ inputs.plan }}
         run: terraform plan -auto-approve -var="aws_region=us-east-2" -var="aws_access_key=${{ env.ACCESS_KEY_ID }}" -var="aws_secret_access_key=${{ env.SECRET_ACCESS_KEY }}"
 
       - name: Terraform Apply
-        if: ${{ inputs.apply == 'true' }}
+        if: ${{ inputs.apply }}
         run: terraform apply -auto-approve -var="aws_region=us-east-2" -var="aws_access_key=${{ env.ACCESS_KEY_ID }}" -var="aws_secret_access_key=${{ env.SECRET_ACCESS_KEY }}"
