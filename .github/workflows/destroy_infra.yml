@@ -5,14 +5,13 @@ on:
     branches: [ "main" ]
 
 jobs:
-  env:
-    ACCESS_KEY_ID: ${{ secrets.PROD_USER_AWS_ACCESS_KEY_ID }}
-    SECRET_ACCESS_KEY: ${{ secrets.PROD_USER_AWS_SECRET_ACCESS_KEY }}
-
   deploy:
     name: 'Destroy Infra'
     runs-on: ubuntu-latest
     environment: production
+    env:
+      ACCESS_KEY_ID: ${{ secrets.PROD_USER_AWS_ACCESS_KEY_ID }}
+      SECRET_ACCESS_KEY: ${{ secrets.PROD_USER_AWS_SECRET_ACCESS_KEY }}
 
     defaults:
       run:
