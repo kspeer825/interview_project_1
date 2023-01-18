@@ -1,7 +1,7 @@
 name: 'Spin Up Infra'
 
 on:
-  workflow_dipatch:
+  workflow_dispatch:
     branches: [ "main" ]
 
 jobs:
