@@ -95,13 +95,13 @@ subject=/C=US/ST=Pennsylvania/L=Philadelphia/O=speer/OU=kylespeer/CN=d31xfsxbx5d
 Getting CA Private Key
 ```
 
-#### Tearing Down The Static Site
+### Tearing Down The Static Site
 
 ```
 $ terraform destroy -auto-apply -var="aws_region=us-east-2" -var="aws_access_key=${AWS_ACCESS_KEY_ID}" -var="aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}"
 ```
 
-#### Testing
+### Testing
 
 Tests written in Go with Terratest live under the [test](https://github.com/kspeer825/KYLE_Challenge/blob/main/test) directory.
 
