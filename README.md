@@ -1,6 +1,7 @@
 # KYLE_Challenge
 
 Author: Kyle Speer
+
 Date: January 2023
 
 Contact Info: 610-996-7373 | kyle.d.speer@gmail.com | [LinkedIn](https://www.linkedin.com/in/kyle-d-speer/)
@@ -55,12 +56,12 @@ The `index.html` lives in a bucket in s3, but is only accessible via HTTPS conne
 
 This exercise can be taken further:
 - Purchase a custom domain.
-- Set up a DNS in Route53 connecting a custom domain to the s3.
+- Set up a DNS in Route53 connecting a custom domain to the s3 bucket.
 - Secure the CDN connections with a public SSL Certficate generated in ACM.
 
 ### Securing w/ Self Signed Certificiate:
 
-To generate a self-signed Certificat w/ SSL run included script:
+To generate a self-signed Certificate w/ SSL run the included script:
 
 ```
 $ cd infra/openssl
@@ -94,7 +95,13 @@ subject=/C=US/ST=Pennsylvania/L=Philadelphia/O=speer/OU=kylespeer/CN=d31xfsxbx5d
 Getting CA Private Key
 ```
 
-#### Testing (*** WIP ***)
+#### Tearing Down The Static Site
+
+```
+$ terraform destroy -auto-apply -var="aws_region=us-east-2" -var="aws_access_key=${AWS_ACCESS_KEY_ID}" -var="aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}"
+```
+
+#### Testing
 
 Tests written in Go with Terratest live under the [test](https://github.com/kspeer825/KYLE_Challenge/blob/main/test) directory.
 
@@ -184,13 +191,6 @@ TestTerraformCloudfrontS3StaticSite 2023-01-20T14:21:23-05:00 logger.go:66:
 PASS
 ok      github.com/kspeer825/KYLE_Challenge     402.851s
 ```
-
-#### Tear Down The Static Site
-
-```
-$ terraform destroy -auto-apply -var="aws_region=us-east-2" -var="aws_access_key=${AWS_ACCESS_KEY_ID}" -var="aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}"
-```
-
 
 ## Coding
 
