@@ -1,13 +1,9 @@
 # KYLE_Challenge
 
-Author:
-Kyle Speer
-January 2023
+Author: Kyle Speer
+Date: January 2023
 
-Contact Info:
-610-996-7373
-kyle.d.speer@gmail.com
-[LinkedIn](https://www.linkedin.com/in/kyle-d-speer/)
+Contact Info: 610-996-7373 | kyle.d.speer@gmail.com | [LinkedIn](https://www.linkedin.com/in/kyle-d-speer/)
 
 ## Infrastructure
 ![Deploy](https://github.com/kspeer825/KYLE_Challenge/actions/workflows/deploy_infra.yml/badge.svg)
@@ -98,7 +94,25 @@ subject=/C=US/ST=Pennsylvania/L=Philadelphia/O=speer/OU=kylespeer/CN=d31xfsxbx5d
 Getting CA Private Key
 ```
 
-NOTE: TESTS ARE NOT INCLUDED!  I just ran out of time.
+#### Testing (*** WIP ***)
+
+Tests written in Go with Terratest live under the [test](https://github.com/kspeer825/KYLE_Challenge/blob/main/test) directory.
+
+You must first install Go and ensure the executable is present in `PATH` in order to run the tests.
+
+To setup the test directory:
+```
+$ cd test
+$ go mod init github.com/kspeer825/KYLE_Challenge
+$ go mod tidy
+```
+
+And to execute the tests:
+
+```
+$ go test -v -timeout 30m
+```
+
 
 #### Tear Down The Static Site
 
