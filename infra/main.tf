@@ -44,7 +44,7 @@ module "website_cf_cdn" {
   source              = "terraform-aws-modules/cloudfront/aws"
   is_ipv6_enabled     = true
   price_class         = "PriceClass_100"
-  wait_for_deployment = false
+  wait_for_deployment = true
 
   create_origin_access_identity = true
   origin_access_identities = {
