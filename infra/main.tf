@@ -6,7 +6,7 @@ module "website_s3_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "3.6.0"
 
-  bucket = "kyle.speer.infra.challenge"
+  bucket = "kyle.speer.portfolio"
   acl    = "public-read"
 
   website = {

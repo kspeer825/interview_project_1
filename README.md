@@ -1,10 +1,19 @@
-# KYLE_Challenge
+# Interview Project 1
 
 Author: Kyle Speer
 
 Date: January 2023
 
 Contact Info: 610-996-7373 | kyle.d.speer@gmail.com | [LinkedIn](https://www.linkedin.com/in/kyle-d-speer/)
+
+Description: A project submission for an interview. The prompt is in two parts.
+
+  1. Infrastructure: Create and deploy a running instance of a `Hello World` web server using a configuration management tool of your choice.
+    a. Secure this application and host such that only appropriate ports are publicly exposed and any http requests are redirected to https. This should be automated using a configuration management tool of your choice and you should feel free to use a self-signed certificate for the web server.
+	b. Develop and apply automated tests to validate the correctness of the server configuration.
+
+  2. Coding: Solve the following problem in Python https://www.hackerrank.com/challenges/validating-credit-card-number/problem
+
 
 ## Infrastructure
 ![Deploy](https://github.com/kspeer825/KYLE_Challenge/actions/workflows/deploy_infra.yml/badge.svg)
